@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import session from 'express-session';
 import Anthropic from '@anthropic-ai/sdk';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -23,7 +23,9 @@ app.use(session({
   saveUninitialized: false,
   cookie: { httpOnly: true, maxAge: 8 * 60 * 60 * 1000 },
 }));
-app.use(express.static(__dirname));
+// Serve React build
+const DIST = join(__dirname, 'client', 'dist');
+app.use(express.static(DIST));
 
 // ── GitHub OAuth ──────────────────────────────────────────────────────────────
 
@@ -105,6 +107,11 @@ app.post('/api/chat', async (req, res) => {
     res.write(`data: ${JSON.stringify({ error: err.message })}\n\n`);
   }
   res.end();
+});
+
+// SPA catch-all — must be after all API/auth routes
+app.get('*', (req, res) => {
+  res.sendFile(join(DIST, 'index.html'));
 });
 
 app.listen(PORT, () => {
