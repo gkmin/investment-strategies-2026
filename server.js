@@ -4,6 +4,7 @@ import session from 'express-session';
 import Anthropic from '@anthropic-ai/sdk';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { getHistory, saveMessage, clearHistory } from './db.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -23,6 +24,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: { httpOnly: true, maxAge: 8 * 60 * 60 * 1000 },
 }));
+
 // Serve React build
 const DIST = join(__dirname, 'client', 'dist');
 app.use(express.static(DIST));
@@ -67,6 +69,19 @@ app.get('/api/me', (req, res) => {
   res.json({ user: req.session.user ?? null });
 });
 
+// ── Chat History ──────────────────────────────────────────────────────────────
+
+app.get('/api/history', (req, res) => {
+  if (!req.session.user) return res.status(401).json({ error: 'Sign in required' });
+  res.json({ messages: getHistory(req.session.user.id) });
+});
+
+app.delete('/api/history', (req, res) => {
+  if (!req.session.user) return res.status(401).json({ error: 'Sign in required' });
+  clearHistory(req.session.user.id);
+  res.json({ ok: true });
+});
+
 // ── AI Chat ───────────────────────────────────────────────────────────────────
 
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
@@ -80,10 +95,16 @@ Always end responses with a brief reminder that your information is for educatio
 app.post('/api/chat', async (req, res) => {
   if (!req.session.user) return res.status(401).json({ error: 'Sign in required' });
 
-  const { messages } = req.body;
+  const { messages, newUserMessage } = req.body;
   if (!Array.isArray(messages) || messages.length === 0) {
     return res.status(400).json({ error: 'messages array required' });
   }
+  if (!newUserMessage || typeof newUserMessage !== 'string') {
+    return res.status(400).json({ error: 'newUserMessage required' });
+  }
+
+  // Persist the user's new message before streaming
+  saveMessage(req.session.user.id, 'user', newUserMessage);
 
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
@@ -97,11 +118,17 @@ app.post('/api/chat', async (req, res) => {
       messages,
     });
 
+    let aiText = '';
     for await (const chunk of stream) {
       if (chunk.type === 'content_block_delta' && chunk.delta.type === 'text_delta') {
+        aiText += chunk.delta.text;
         res.write(`data: ${JSON.stringify({ text: chunk.delta.text })}\n\n`);
       }
     }
+
+    // Persist the full AI response once streaming completes
+    if (aiText) saveMessage(req.session.user.id, 'assistant', aiText);
+
     res.write('data: [DONE]\n\n');
   } catch (err) {
     res.write(`data: ${JSON.stringify({ error: err.message })}\n\n`);
