@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Investment Strategies 2026</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d2e;
+      --card: #222539;
+      --border: #2e3350;
+      --accent-blue: #4f8ef7;
+      --accent-green: #34d399;
+      --accent-yellow: #fbbf24;
+      --accent-purple: #a78bfa;
+      --accent-orange: #fb923c;
+      --accent-pink: #f472b6;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(79,142,247,.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(90deg, #4f8ef7, #a78bfa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    header p {
+      margin-top: 12px;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      background: rgba(79,142,247,.15);
+      border: 1px solid rgba(79,142,247,.35);
+      color: var(--accent-blue);
+    }
+
+    /* ── Nav pills ── */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 24px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: var(--card);
+      transition: all .2s;
+    }
+    nav a:hover { border-color: currentColor; color: var(--text-primary); }
+    nav a.stocks   { --c: var(--accent-blue);   }
+    nav a.realestate{ --c: var(--accent-green);  }
+    nav a.bonds    { --c: var(--accent-yellow);  }
+    nav a.crypto   { --c: var(--accent-purple);  }
+    nav a.commodities{ --c: var(--accent-orange);}
+    nav a.etfs     { --c: var(--accent-pink);    }
+    nav a:hover { color: var(--c); border-color: var(--c); background: color-mix(in srgb, var(--c) 10%, transparent); }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    /* ── Category section ── */
+    .category { scroll-margin-top: 80px; }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .cat-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .category-header h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .category-header .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* accent colours per category */
+    #stocks    .cat-icon { background: rgba(79,142,247,.15);  color: var(--accent-blue);   }
+    #stocks    h2        { color: var(--accent-blue); }
+    #realestate .cat-icon{ background: rgba(52,211,153,.15); color: var(--accent-green);  }
+    #realestate h2       { color: var(--accent-green); }
+    #bonds     .cat-icon { background: rgba(251,191,36,.15);  color: var(--accent-yellow); }
+    #bonds     h2        { color: var(--accent-yellow); }
+    #crypto    .cat-icon { background: rgba(167,139,250,.15); color: var(--accent-purple); }
+    #crypto    h2        { color: var(--accent-purple); }
+    #commodities .cat-icon{ background:rgba(251,146,60,.15);  color: var(--accent-orange); }
+    #commodities h2      { color: var(--accent-orange); }
+    #etfs      .cat-icon { background: rgba(244,114,182,.15); color: var(--accent-pink);   }
+    #etfs      h2        { color: var(--accent-pink); }
+
+    /* ── Grid ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 18px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      transition: transform .2s, box-shadow .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.4);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      border-radius: 16px 16px 0 0;
+    }
+    #stocks     .card::before { background: var(--accent-blue);   }
+    #realestate .card::before { background: var(--accent-green);  }
+    #bonds      .card::before { background: var(--accent-yellow); }
+    #crypto     .card::before { background: var(--accent-purple); }
+    #commodities .card::before{ background: var(--accent-orange); }
+    #etfs       .card::before { background: var(--accent-pink);   }
+
+    .card-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    #stocks     .card-tag { background: rgba(79,142,247,.15);  color: var(--accent-blue);   }
+    #realestate .card-tag { background: rgba(52,211,153,.15);  color: var(--accent-green);  }
+    #bonds      .card-tag { background: rgba(251,191,36,.15);  color: var(--accent-yellow); }
+    #crypto     .card-tag { background: rgba(167,139,250,.15); color: var(--accent-purple); }
+    #commodities .card-tag{ background: rgba(251,146,60,.15);  color: var(--accent-orange); }
+    #etfs       .card-tag { background: rgba(244,114,182,.15); color: var(--accent-pink);   }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .card p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+    .card ul {
+      margin-top: 10px;
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .card ul li {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ── Risk / Return bar ── */
+    .metrics {
+      display: flex;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .metric { flex: 1; }
+    .metric-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+    .bar-track {
+      height: 5px;
+      border-radius: 3px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    /* ── Stat highlight ── */
+    .stat-box {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+    }
+    .stat-box .stat-val {
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+    .stat-box .stat-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── Wide card (full-width) ── */
+    .card.wide { grid-column: 1 / -1; }
+    .card.wide .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 600px) {
+      .card.wide .two-col { grid-template-columns: 1fr; }
+    }
+    .card.wide h3 { font-size: 1.15rem; margin-bottom: 12px; }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* ── Sources ── */
+    .sources-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+    }
+    .sources-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 8px;
+    }
+    .sources-grid a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all .2s;
+    }
+    .sources-grid a:hover { color: var(--accent-blue); border-color: var(--accent-blue); }
+    .sources-grid a .src-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Top-5 table ── */
+    .top5-wrap {
+      margin-top: 28px;
+    }
+    .top5-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .top5-label span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+    }
+    .top5-label::before, .top5-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .top5-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .top5-table thead th {
+      padding: 8px 12px;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .top5-table thead th:nth-child(1) { width: 36px; text-align: center; }
+    .top5-table thead th:nth-child(2) { width: 80px; }
+    .top5-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      transition: background .15s;
+    }
+    .top5-table tbody tr:last-child { border-bottom: none; }
+    .top5-table tbody tr:hover { background: rgba(255,255,255,.03); }
+    .top5-table td {
+      padding: 12px 12px;
+      vertical-align: middle;
+    }
+    .top5-table td:nth-child(1) {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--text-muted);
+    }
+    .ticker-pill {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      font-family: 'Courier New', monospace;
+    }
+    .t5-name { font-weight: 600; color: var(--text-primary); font-size: 0.88rem; }
+    .t5-sub  { font-size: 0.78rem; color: var(--text-muted); margin-top: 1px; }
+    .t5-metric {
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .t5-note { color: var(--text-secondary); font-size: 0.8rem; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    footer strong { color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════  HEADER  ════════════════════ -->
+<header>
+  <h1>Best Investment Strategies 2026</h1>
+  <p>Research-backed strategies across every major asset class — curated from leading financial institutions.</p>
+  <span class="badge">Updated April 2026</span>
+</header>
+
+<!-- ════════════════════  NAV  ════════════════════ -->
+<nav>
+  <a href="#stocks"      class="stocks"      >📈 Stocks</a>
+  <a href="#realestate"  class="realestate"  >🏠 Real Estate</a>
+  <a href="#bonds"       class="bonds"       >📜 Bonds</a>
+  <a href="#crypto"      class="crypto"      >🔷 Crypto</a>
+  <a href="#commodities" class="commodities" >🥇 Commodities</a>
+  <a href="#etfs"        class="etfs"        >📊 ETFs</a>
+</nav>
+
+<!-- ════════════════════  MAIN  ════════════════════ -->
+<main>
+
+  <!-- ══════  STOCKS  ══════ -->
+  <section class="category" id="stocks">
+    <div class="category-header">
+      <div class="cat-icon">📈</div>
+      <div>
+        <h2>Stocks &amp; Equities</h2>
+        <div class="subtitle">Growth-oriented ownership stakes in public companies</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-tag">Core Strategy</div>
+        <h3>Value Investing (Buffett-Style)</h3>
+        <p>Buy stocks trading below intrinsic value and hold for 5+ years. Focus on companies with durable competitive moats, strong balance sheets, and consistent earnings.</p>
+        <ul>
+          <li>Target P/E below industry average</li>
+          <li>Look for strong free cash flow</li>
+          <li>Prefer predictable, recurring revenue</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Return Potential</div>
+            <div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">2026 Theme</div>
+        <h3>AI &amp; Technology Growth</h3>
+        <p>AI adoption is a critical driver of stock performance in 2026. Above-trend growth and accelerating productivity favor selective risk-taking in high-quality AI infrastructure plays.</p>
+        <ul>
+          <li>AI infrastructure & data centers</li>
+          <li>Hyperscaler companies (cloud providers)</li>
+          <li>Enterprise software with AI integration</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:70%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Return Potential</div>
+            <div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Wealth Strategy</div>
+        <h3>Ultra-Wealthy Portfolio Tactics</h3>
+        <p>Long-term thinking, disciplined diversification, and position sizing are tactics used by the ultra-wealthy that any investor can adopt. Focus on high-probability outcomes, not hot trades.</p>
+        <ul>
+          <li>Size positions based on conviction</li>
+          <li>Diversify across sectors &amp; geographies</li>
+          <li>Resist chasing short-term momentum</li>
+        </ul>
+        <div class="stat-box">
+          <div class="stat-val" style="color:var(--accent-blue);">5–10 yrs</div>
+          <div class="stat-desc">Recommended minimum holding horizon for core equity positions</div>
+        </div>
+      </div>
+
+      <!-- TOP 5 STOCKS -->
+      <div class="card wide">
+        <div class="card-tag">Top 5 Picks</div>
+        <h3>Top 5 Stocks to Buy in 2026</h3>
+        <div class="top5-wrap">
+          <table class="top5-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ticker</th>
+                <th>Company</th>
+                <th>Key Metric</th>
+                <th>Why Buy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><span class="ticker-pill" style="background:rgba(79,142,247,.15);color:var(--accent-blue);">NVDA</span></td>
+                <td><div class="t5-name">Nvidia</div><div class="t5-sub">AI &amp; GPU Computing</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">#1 AI Chip</span></td>
+                <td class="t5-note">Dominant GPU provider powering AI training &amp; inference worldwide</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><span class="ticker-pill" style="background:rgba(79,142,247,.15);color:var(--accent-blue);">MSFT</span></td>
+                <td><div class="t5-name">Microsoft</div><div class="t5-sub">Cloud &amp; AI Software</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">Near Decade-Low P/E</span></td>
+                <td class="t5-note">Near decade-low valuation with deep AI integration across all product lines</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><span class="ticker-pill" style="background:rgba(79,142,247,.15);color:var(--accent-blue);">TSM</span></td>
+                <td><div class="t5-name">Taiwan Semiconductor</div><div class="t5-sub">Chip Manufacturing</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">World's Best Tech</span></td>
+                <td class="t5-note">World's largest chip foundry with the most advanced semiconductor technology</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><span class="ticker-pill" style="background:rgba(79,142,247,.15);color:var(--accent-blue);">TTD</span></td>
+                <td><div class="t5-name">The Trade Desk</div><div class="t5-sub">Ad Technology</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">+18% Revenue Growth</span></td>
+                <td class="t5-note">Analysts expect 18% revenue growth in 2026 as digital ad demand accelerates</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><span class="ticker-pill" style="background:rgba(79,142,247,.15);color:var(--accent-blue);">MELI</span></td>
+                <td><div class="t5-name">MercadoLibre</div><div class="t5-sub">Latin America E-Commerce</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">EM Diversifier</span></td>
+                <td class="t5-note">Dominant e-commerce &amp; fintech platform across Latin America's growing middle class</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card wide">
+        <div class="card-tag">2026 Market Outlook</div>
+        <h3>Key Macro Themes Driving Equities</h3>
+        <div class="two-col">
+          <div>
+            <p style="margin-bottom:10px;">BlackRock and Morgan Stanley highlight four forces shaping equity markets in 2026:</p>
+            <ul>
+              <li><strong style="color:var(--accent-blue);">AI adoption</strong> — productivity-driven earnings upside</li>
+              <li><strong style="color:var(--accent-blue);">Energy demand</strong> — data centers &amp; electrification</li>
+              <li><strong style="color:var(--accent-blue);">Geopolitical shifts</strong> — reshoring &amp; supply-chain diversification</li>
+              <li><strong style="color:var(--accent-blue);">Demographic trends</strong> — aging populations, healthcare spending</li>
+            </ul>
+          </div>
+          <div>
+            <p style="margin-bottom:10px;">Positioning tips from major institutions:</p>
+            <ul>
+              <li>Favor quality over speculative growth</li>
+              <li>Above-trend growth &amp; easing policy supports risk assets</li>
+              <li>Use volatility as an entry opportunity, not an exit signal</li>
+              <li>Sustainable / ESG assets gaining mainstream allocation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════  REAL ESTATE  ══════ -->
+  <section class="category" id="realestate">
+    <div class="category-header">
+      <div class="cat-icon">🏠</div>
+      <div>
+        <h2>Real Estate</h2>
+        <div class="subtitle">Tangible assets generating rental income &amp; long-term appreciation</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-tag">Core Strategy</div>
+        <h3>Buy &amp; Hold Rental Properties</h3>
+        <p>Acquire properties in sub-markets with steady job growth, landlord-friendly regulations, and quality-of-life anchors (hospitals, universities) for long-term cash flow.</p>
+        <ul>
+          <li>Target markets: Atlanta, Dallas-Fort Worth, Raleigh</li>
+          <li>Cleveland: highest rent yield ratio in any US metro</li>
+          <li>Prioritize cash flow over appreciation in 2026</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:35%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Return Potential</div>
+            <div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Active Strategy</div>
+        <h3>BRRRR Method</h3>
+        <p><strong style="color:var(--accent-green);">Buy · Rehab · Rent · Refinance · Repeat</strong> — purchase below stabilized value, renovate, place tenants, then refinance at the new appraised value to recycle capital.</p>
+        <ul>
+          <li>Forces equity creation through rehab</li>
+          <li>Refinancing returns initial capital for next deal</li>
+          <li>Works best in markets with value-add inventory</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Return Potential</div>
+            <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Portfolio</div>
+        <h3>Diversified RE Portfolio</h3>
+        <p>Spread investments across asset types to ensure stability when market conditions shift. Lower rates in 2026 are driving a real estate recovery, per Morgan Stanley.</p>
+        <ul>
+          <li>Multifamily — steady demand, low vacancy</li>
+          <li>Build-to-Rent (BTR) — growing asset class</li>
+          <li>Industrial / logistics — e-commerce tailwinds</li>
+          <li>Select retail in high-traffic corridors</li>
+        </ul>
+      </div>
+
+      <!-- TOP 5 REITs -->
+      <div class="card wide">
+        <div class="card-tag">Top 5 Picks</div>
+        <h3>Top 5 REITs to Buy in 2026</h3>
+        <div class="top5-wrap">
+          <table class="top5-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ticker</th>
+                <th>REIT</th>
+                <th>Dividend Yield</th>
+                <th>Why Buy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><span class="ticker-pill" style="background:rgba(52,211,153,.15);color:var(--accent-green);">O</span></td>
+                <td><div class="t5-name">Realty Income</div><div class="t5-sub">Triple-Net Retail REIT</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">5.6% — Monthly</span></td>
+                <td class="t5-note">Largest triple-net REIT in the US; pays dividends monthly — rare income reliability</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><span class="ticker-pill" style="background:rgba(52,211,153,.15);color:var(--accent-green);">AMT</span></td>
+                <td><div class="t5-name">American Tower</div><div class="t5-sub">Communications Infrastructure</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">~3.1% Yield</span></td>
+                <td class="t5-note">World's largest independent wireless tower portfolio; 5G &amp; telecom infrastructure demand</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><span class="ticker-pill" style="background:rgba(52,211,153,.15);color:var(--accent-green);">EQR</span></td>
+                <td><div class="t5-name">Equity Residential</div><div class="t5-sub">Multifamily / Apartments</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">~4.0% Yield</span></td>
+                <td class="t5-note">Morningstar Buy rating with $80 fair value; benefits from housing undersupply</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><span class="ticker-pill" style="background:rgba(52,211,153,.15);color:var(--accent-green);">PK</span></td>
+                <td><div class="t5-name">Park Hotels &amp; Resorts</div><div class="t5-sub">Luxury Hotel REIT</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">9.62% Yield</span></td>
+                <td class="t5-note">47% below fair value estimate of $19.50/share; deep value opportunity in hospitality</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><span class="ticker-pill" style="background:rgba(52,211,153,.15);color:var(--accent-green);">PEB</span></td>
+                <td><div class="t5-name">Pebblebrook Hotel Trust</div><div class="t5-sub">Boutique Hotels</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-green);">~5.5% Yield</span></td>
+                <td class="t5-note">Largest US lodging REIT in boutique hotels; 44 properties in premium urban gateway markets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Key Principle</div>
+        <h3>Cash Flow Over Appreciation</h3>
+        <p>With rates still elevated, deals must be built around stable income and realistic assumptions. Disciplined underwriting and adequate reserves matter more than ever in 2026.</p>
+        <div class="stat-box">
+          <div class="stat-val" style="color:var(--accent-green);">#1 Market</div>
+          <div class="stat-desc">Cleveland — highest rent yield ratio &amp; best affordability of any major US metro for 2026</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════  BONDS  ══════ -->
+  <section class="category" id="bonds">
+    <div class="category-header">
+      <div class="cat-icon">📜</div>
+      <div>
+        <h2>Bonds &amp; Fixed Income</h2>
+        <div class="subtitle">Stable income with capital preservation</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-tag">Core Positioning</div>
+        <h3>Intermediate-Duration Investment Grade</h3>
+        <p>Charles Schwab &amp; Vanguard recommend keeping duration in the 5–10 year range, predominantly investment-grade credit, as rates normalize in 2026.</p>
+        <ul>
+          <li>Investment-grade corporates at 4–5.5% coupons</li>
+          <li>BBB-rated bonds offering income with low default risk</li>
+          <li>Intermediate Treasuries — attractive on declining rate path</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:25%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Yield</div>
+            <div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Tax-Advantaged</div>
+        <h3>Municipal Bonds</h3>
+        <p>Muni bonds offer a compelling after-tax yield for investors in higher tax brackets. Current market offers attractive yields and stable credit quality heading into 2026.</p>
+        <ul>
+          <li>Federal (and often state) tax-exempt income</li>
+          <li>Strong credit fundamentals post-pandemic</li>
+          <li>Particularly valuable in top marginal brackets</li>
+        </ul>
+        <div class="stat-box">
+          <div class="stat-val" style="color:var(--accent-yellow);">~3.5–4.5%</div>
+          <div class="stat-desc">Tax-equivalent yield for top-bracket investors in quality munis</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Inflation Hedge</div>
+        <h3>TIPS — Inflation-Protected</h3>
+        <p>Treasury Inflation-Protected Securities adjust principal with CPI, making them a standout opportunity when inflation uncertainty remains elevated.</p>
+        <ul>
+          <li>Principal rises with CPI automatically</li>
+          <li>Real yield remains positive in 2026</li>
+          <li>Ideal for retirement portfolios &amp; conservative allocators</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:15%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Inflation Protection</div>
+            <div class="bar-track"><div class="bar-fill" style="width:95%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP 5 BONDS -->
+      <div class="card wide">
+        <div class="card-tag">Top 5 Picks</div>
+        <h3>Top 5 Bond ETFs to Buy in 2026</h3>
+        <div class="top5-wrap">
+          <table class="top5-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ticker</th>
+                <th>Fund</th>
+                <th>Yield / ER</th>
+                <th>Why Buy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><span class="ticker-pill" style="background:rgba(251,191,36,.15);color:var(--accent-yellow);">BND</span></td>
+                <td><div class="t5-name">Vanguard Total Bond Market ETF</div><div class="t5-sub">Broad US Investment-Grade</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-yellow);">ER: 0.03%</span></td>
+                <td class="t5-note">Entire US investment-grade bond market in one fund at an ultra-low 0.03% expense ratio</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><span class="ticker-pill" style="background:rgba(251,191,36,.15);color:var(--accent-yellow);">AGG</span></td>
+                <td><div class="t5-name">iShares Core US Aggregate</div><div class="t5-sub">Core Bond — Intermediate</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-yellow);">ER: 0.03%</span></td>
+                <td class="t5-note">Benchmark bond index: government, corporate, and mortgage-backed securities blended</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><span class="ticker-pill" style="background:rgba(251,191,36,.15);color:var(--accent-yellow);">BINC</span></td>
+                <td><div class="t5-name">iShares Flexible Income Active</div><div class="t5-sub">Active Multi-Sector Bond</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-yellow);">$16B AUM</span></td>
+                <td class="t5-note">Most popular active bond ETF of 2025-2026; flexible mandate captures best fixed-income opportunities</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><span class="ticker-pill" style="background:rgba(251,191,36,.15);color:var(--accent-yellow);">BSV</span></td>
+                <td><div class="t5-name">Vanguard Short-Term Corp Bond</div><div class="t5-sub">Short Duration (1–5 yr)</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-yellow);">~4.2% Yield</span></td>
+                <td class="t5-note">4.20% yield with minimal interest-rate sensitivity; ideal for capital preservation investors</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><span class="ticker-pill" style="background:rgba(251,191,36,.15);color:var(--accent-yellow);">VTEB</span></td>
+                <td><div class="t5-name">Vanguard Tax-Exempt Bond ETF</div><div class="t5-sub">Municipal Bonds</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-yellow);">Tax-Free Yield</span></td>
+                <td class="t5-note">Broad muni bond exposure; compelling after-tax yield for investors in high tax brackets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Higher Yield</div>
+        <h3>High-Yield &amp; Emerging Market Bonds</h3>
+        <p>PineBridge &amp; VanEck note that high-yield all-in yields adequately compensate for credit risk. Emerging markets debt was 2025's strongest fixed-income performer and remains well-positioned.</p>
+        <ul>
+          <li>High-yield: moderate default expectations in 2026</li>
+          <li>CLOs — income without excessive duration risk</li>
+          <li>EM bonds: strong fundamentals, underpinned by solid growth</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Yield</div>
+            <div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════  CRYPTO  ══════ -->
+  <section class="category" id="crypto">
+    <div class="category-header">
+      <div class="cat-icon">🔷</div>
+      <div>
+        <h2>Cryptocurrency &amp; Digital Assets</h2>
+        <div class="subtitle">High-risk, high-reward digital asset class</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-tag">Core Holdings</div>
+        <h3>Bitcoin &amp; Ethereum</h3>
+        <p>BTC and ETH are treated as core holdings for their liquidity and widespread adoption across exchanges and decentralized applications. Bitcoin remains the benchmark entry point for new investors.</p>
+        <ul>
+          <li>Largest market caps — most liquid assets</li>
+          <li>ETF spot products available on major brokerages</li>
+          <li>Long-term store of value narrative (BTC)</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Return Potential</div>
+            <div class="bar-track"><div class="bar-fill" style="width:95%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Layer-1 Alternatives</div>
+        <h3>Solana, Avalanche &amp; Others</h3>
+        <p>Solana (SOL) is Ethereum's biggest competitor, delivering high transaction speed, scalability, and low cost. AVAX, XRP, and ADA offer differentiated blockchain infrastructure bets.</p>
+        <ul>
+          <li>Solana — high TPS, thriving DeFi/NFT ecosystem</li>
+          <li>XRP — cross-border payment focus</li>
+          <li>ADA, AVAX, NEAR — smart contract platforms</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Return Potential</div>
+            <div class="bar-track"><div class="bar-fill" style="width:98%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP 5 CRYPTO -->
+      <div class="card wide">
+        <div class="card-tag">Top 5 Picks</div>
+        <h3>Top 5 Cryptocurrencies to Hold in 2026</h3>
+        <div class="top5-wrap">
+          <table class="top5-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ticker</th>
+                <th>Asset</th>
+                <th>Suggested Allocation</th>
+                <th>Why Hold</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><span class="ticker-pill" style="background:rgba(167,139,250,.15);color:var(--accent-purple);">BTC</span></td>
+                <td><div class="t5-name">Bitcoin</div><div class="t5-sub">Digital Gold / Store of Value</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-purple);">35% of Crypto</span></td>
+                <td class="t5-note">Largest market cap, highest liquidity; institutional ETF adoption driving mainstream demand</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><span class="ticker-pill" style="background:rgba(167,139,250,.15);color:var(--accent-purple);">ETH</span></td>
+                <td><div class="t5-name">Ethereum</div><div class="t5-sub">Smart Contract Platform</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-purple);">25% of Crypto</span></td>
+                <td class="t5-note">Unmatched developer ecosystem; leads DeFi, tokenized assets, and Layer-2 scaling</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><span class="ticker-pill" style="background:rgba(167,139,250,.15);color:var(--accent-purple);">SOL</span></td>
+                <td><div class="t5-name">Solana</div><div class="t5-sub">High-Speed Blockchain</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-purple);">15% of Crypto</span></td>
+                <td class="t5-note">Built reputation for speed and low fees; go-to chain for consumer apps and DeFi activity</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><span class="ticker-pill" style="background:rgba(167,139,250,.15);color:var(--accent-purple);">LINK</span></td>
+                <td><div class="t5-name">Chainlink</div><div class="t5-sub">Blockchain Oracle Network</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-purple);">15% of Crypto</span></td>
+                <td class="t5-note">Critical infrastructure for DeFi and real-world asset tokenization; growing institutional use</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><span class="ticker-pill" style="background:rgba(167,139,250,.15);color:var(--accent-purple);">BNB</span></td>
+                <td><div class="t5-name">BNB</div><div class="t5-sub">Exchange Ecosystem Token</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-purple);">10% of Crypto</span></td>
+                <td class="t5-note">Strong exchange ecosystem integration; consistent demand from Binance platform usage</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Risk Management</div>
+        <h3>Allocation &amp; Time Horizon Strategy</h3>
+        <p>Match crypto allocations to your time horizon. Revisit assumptions as the market evolves. Diversification and ongoing research are essential — keep conviction aligned with clear risk controls.</p>
+        <ul>
+          <li>Never allocate more than you can afford to lose</li>
+          <li>Core/satellite: BTC/ETH core + high-risk altcoin satellite</li>
+          <li>Dollar-cost average to smooth volatility entry</li>
+          <li>Consider gold-backed stablecoins as a hedge</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════  COMMODITIES  ══════ -->
+  <section class="category" id="commodities">
+    <div class="category-header">
+      <div class="cat-icon">🥇</div>
+      <div>
+        <h2>Commodities &amp; Precious Metals</h2>
+        <div class="subtitle">Tangible stores of value and inflation hedges</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-tag">Bullish Outlook</div>
+        <h3>Gold — Institutional Bull Case</h3>
+        <p>J.P. Morgan forecasts gold reaching $5,000/oz by year-end 2026. Yardeni Research targets $6,000. Central bank demand is averaging 585 tonnes per quarter, sustaining the bull run.</p>
+        <ul>
+          <li>Geopolitical uncertainty driving safe-haven demand</li>
+          <li>Emerging market central banks buying aggressively</li>
+          <li>Low correlation to equities (0.1–0.3 vs S&P 500)</li>
+        </ul>
+        <div class="stat-box">
+          <div class="stat-val" style="color:var(--accent-orange);">$5,000+</div>
+          <div class="stat-desc">J.P. Morgan gold price target by Q4 2026</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Access Methods</div>
+        <h3>How to Invest in Gold</h3>
+        <p>Investors must decide between direct physical exposure and financial instruments. Each has distinct risk/cost trade-offs.</p>
+        <ul>
+          <li><strong style="color:var(--accent-orange);">Physical</strong> — coins, bars, bullion (storage &amp; insurance costs)</li>
+          <li><strong style="color:var(--accent-orange);">Gold ETFs</strong> — GLD, IAU track spot price without storage</li>
+          <li><strong style="color:var(--accent-orange);">Mining stocks</strong> — GDX, GDXJ offer operating leverage to gold</li>
+          <li><strong style="color:var(--accent-orange);">Gold IRA</strong> — tax-advantaged retirement exposure</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:45%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Inflation Hedge</div>
+            <div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP 5 COMMODITIES -->
+      <div class="card wide">
+        <div class="card-tag">Top 5 Picks</div>
+        <h3>Top 5 Commodity Products to Buy in 2026</h3>
+        <div class="top5-wrap">
+          <table class="top5-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ticker</th>
+                <th>Product</th>
+                <th>AUM / Expense Ratio</th>
+                <th>Why Buy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><span class="ticker-pill" style="background:rgba(251,146,60,.15);color:var(--accent-orange);">GLD</span></td>
+                <td><div class="t5-name">SPDR Gold Shares</div><div class="t5-sub">Physical Gold ETF</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-orange);">$176B / 0.40%</span></td>
+                <td class="t5-note">World's largest gold ETF; deepest options chain &amp; tightest spreads — preferred by institutions</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><span class="ticker-pill" style="background:rgba(251,146,60,.15);color:var(--accent-orange);">IAU</span></td>
+                <td><div class="t5-name">iShares Gold Trust</div><div class="t5-sub">Physical Gold ETF</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-orange);">$71B / 0.25%</span></td>
+                <td class="t5-note">Best balance of liquidity and low cost for long-term gold investors; 0.15% cheaper than GLD</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><span class="ticker-pill" style="background:rgba(251,146,60,.15);color:var(--accent-orange);">GLDM</span></td>
+                <td><div class="t5-name">SPDR Gold MiniShares</div><div class="t5-sub">Low-Cost Physical Gold</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-orange);">ER: 0.10%</span></td>
+                <td class="t5-note">Lowest-cost physical gold ETF at just 0.10%; ideal for cost-conscious long-term holders</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><span class="ticker-pill" style="background:rgba(251,146,60,.15);color:var(--accent-orange);">GDX</span></td>
+                <td><div class="t5-name">VanEck Gold Miners ETF</div><div class="t5-sub">Gold Mining Stocks</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-orange);">$33B / 0.51%</span></td>
+                <td class="t5-note">Operating leverage to gold price through 63 top global producers; amplified upside potential</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><span class="ticker-pill" style="background:rgba(251,146,60,.15);color:var(--accent-orange);">GDXJ</span></td>
+                <td><div class="t5-name">VanEck Junior Gold Miners</div><div class="t5-sub">Small-Cap Miners</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-orange);">$10B / 0.51%</span></td>
+                <td class="t5-note">High upside from small &amp; early-stage miners; higher risk/reward than large-cap GDX</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Portfolio Role</div>
+        <h3>Silver &amp; Copper — Strategic Metals</h3>
+        <p>Silver offers dual demand from investment and industrial use. Copper, with its high correlation to equity markets (~0.6–0.8), is a global growth barometer. Both benefit from the energy transition.</p>
+        <ul>
+          <li>Silver: monetary store + solar panel demand</li>
+          <li>Copper: EV batteries, power grids, data centers</li>
+          <li>Sprott recommends 10–15% precious metals in portfolios</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Return Potential</div>
+            <div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════  ETFs  ══════ -->
+  <section class="category" id="etfs">
+    <div class="category-header">
+      <div class="cat-icon">📊</div>
+      <div>
+        <h2>ETFs &amp; Index Funds</h2>
+        <div class="subtitle">Low-cost, diversified exposure to every asset class</div>
+      </div>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-tag">Broad Market</div>
+        <h3>Equal-Weight S&amp;P 500 (RSP)</h3>
+        <p>As market performance broadens beyond mega-cap tech, the Invesco S&P 500 Equal Weight ETF benefits from wider participation across all 500 names — not just the top 10.</p>
+        <ul>
+          <li>Equal exposure across all S&P 500 constituents</li>
+          <li>Natural rebalancing — sells high, buys low</li>
+          <li>Reduces mega-cap concentration risk</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Diversification</div>
+            <div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Income</div>
+        <h3>Dividend ETFs (SCHD)</h3>
+        <p>The Schwab U.S. Dividend Equity ETF tracks the Dow Jones Dividend 100 Index — screening for dividend yield, five-year growth rate, and balance-sheet quality.</p>
+        <ul>
+          <li>100 highest-quality dividend payers</li>
+          <li>Screens for consistent dividend growth</li>
+          <li>Low expense ratio — long-term compounding</li>
+        </ul>
+        <div class="stat-box">
+          <div class="stat-val" style="color:var(--accent-pink);">~3.5%</div>
+          <div class="stat-desc">Trailing dividend yield — plus long-term capital appreciation</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Thematic</div>
+        <h3>AI &amp; Clean Energy Sector ETFs</h3>
+        <p>Position for 2026's dominant themes: AI infrastructure spending and renewables acceleration. Sector ETFs provide concentrated exposure without single-stock risk.</p>
+        <ul>
+          <li>AI/Tech ETFs — infrastructure, semiconductors, software</li>
+          <li>Clean energy ETFs — solar, wind, grid modernization</li>
+          <li>Emerging markets ETFs — AI &amp; growth beneficiaries</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Return Potential</div>
+            <div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Fixed Income</div>
+        <h3>Bond ETFs — Riding Rate Normalization</h3>
+        <p>Bond ETF assets grew dramatically in 2025, now at 29.6% of all bond fund assets. Active bond ETFs are outpacing passive, capturing 90% of March 2026 flows.</p>
+        <ul>
+          <li>Intermediate Treasury ETFs — rate cut beneficiaries</li>
+          <li>Investment-grade corporate bond ETFs</li>
+          <li>Muni bond ETFs for tax-sensitive investors</li>
+        </ul>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Risk</div>
+            <div class="bar-track"><div class="bar-fill" style="width:25%;background:var(--accent-blue);"></div></div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Income</div>
+            <div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--accent-green);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP 5 ETFs -->
+      <div class="card wide">
+        <div class="card-tag">Top 5 Picks</div>
+        <h3>Top 5 ETFs &amp; Index Funds to Buy in 2026</h3>
+        <div class="top5-wrap">
+          <table class="top5-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ticker</th>
+                <th>Fund</th>
+                <th>Key Stat</th>
+                <th>Why Buy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><span class="ticker-pill" style="background:rgba(244,114,182,.15);color:var(--accent-pink);">VOO</span></td>
+                <td><div class="t5-name">Vanguard S&amp;P 500 ETF</div><div class="t5-sub">Broad US Large-Cap</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-pink);">+85.94% (3yr)</span></td>
+                <td class="t5-note">Ultimate diversification across all S&P 500 sectors; low cost with steady long-term returns</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><span class="ticker-pill" style="background:rgba(244,114,182,.15);color:var(--accent-pink);">QQQ</span></td>
+                <td><div class="t5-name">Invesco QQQ Trust</div><div class="t5-sub">Nasdaq-100 Growth</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-pink);">Top 100 Nasdaq</span></td>
+                <td class="t5-note">Concentrated bet on the 100 largest non-financial Nasdaq companies; top AI/tech exposure</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><span class="ticker-pill" style="background:rgba(244,114,182,.15);color:var(--accent-pink);">VGT</span></td>
+                <td><div class="t5-name">Vanguard Info Technology ETF</div><div class="t5-sub">Sector — Technology</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-pink);">14.1% CAGR (20yr)</span></td>
+                <td class="t5-note">14.1% CAGR since 2004 vs 10.4% for S&P 500; top holdings Apple, Microsoft, Nvidia at 0.10% ER</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><span class="ticker-pill" style="background:rgba(244,114,182,.15);color:var(--accent-pink);">SCHD</span></td>
+                <td><div class="t5-name">Schwab US Dividend Equity ETF</div><div class="t5-sub">Dividend Income</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-pink);">~3.5% Yield</span></td>
+                <td class="t5-note">Top 100 dividend-quality stocks screened for yield &amp; 5-yr growth rate; income + appreciation</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><span class="ticker-pill" style="background:rgba(244,114,182,.15);color:var(--accent-pink);">VT</span></td>
+                <td><div class="t5-name">Vanguard Total World Stock ETF</div><div class="t5-sub">Global All-Cap</div></td>
+                <td><span class="t5-metric" style="color:var(--accent-pink);">~10,000 stocks / 0.06%</span></td>
+                <td class="t5-note">Entire global stock market in one fund at 0.06%; Morningstar Gold Medal — unmatched breadth</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card wide">
+        <div class="card-tag">2026 Shift</div>
+        <h3>Key ETF Market Trend: Value Over Growth</h3>
+        <div class="two-col">
+          <div>
+            <p style="margin-bottom:10px;">Morningstar and iShares data shows a rare 2026 market rotation:</p>
+            <ul>
+              <li>Value ETFs seeing more inflows than growth — first time in 5 years</li>
+              <li>Energy ETFs moved to top of leaderboard for first time in years</li>
+              <li>Active ETFs outpacing index products in share of new flows</li>
+              <li>International &amp; EM ETFs gaining as USD weakens</li>
+            </ul>
+          </div>
+          <div>
+            <p style="margin-bottom:10px;">Institutional allocation shifts to watch:</p>
+            <ul>
+              <li>BlackRock highlights EM as key AI momentum beneficiary</li>
+              <li>Momentum factor ETFs well-suited to high-dispersion environments</li>
+              <li>149 new bond ETFs launched in 2025 — fixed income going ETF-first</li>
+              <li>Sector rotation: energy &gt; technology for the first time in years</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════  SOURCES  ══════ -->
+  <div class="sources-section">
+    <h2>Sources &amp; Further Reading</h2>
+    <div class="sources-grid">
+      <a href="https://www.blackrock.com/us/financial-professionals/insights/investing-in-2026" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-blue);"></span>BlackRock — Investing in 2026
+      </a>
+      <a href="https://www.morningstar.com/portfolios/4-investing-ideas-2026-great-money-minds" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-blue);"></span>Morningstar — 4 Investing Ideas for 2026
+      </a>
+      <a href="https://www.morganstanley.com/insights/articles/investment-outlook-shaping-markets-2026" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-blue);"></span>Morgan Stanley — 2026 Market Outlook
+      </a>
+      <a href="https://www.nerdwallet.com/investing/learn/the-best-investments-right-now" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-blue);"></span>NerdWallet — 10 Best Investments 2026
+      </a>
+      <a href="https://www.bankrate.com/investing/best-long-term-investments/" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-blue);"></span>Bankrate — Best Long-Term Investments
+      </a>
+      <a href="https://www.fidelity.com/learning-center/smart-money/what-to-invest-in" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-blue);"></span>Fidelity — Top Investments 2026
+      </a>
+      <a href="https://vikingcapllc.com/real-estate-portfolio-2026/" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-green);"></span>Viking Capital — Balanced RE Portfolio
+      </a>
+      <a href="https://www.morganstanley.com/insights/articles/real-estate-market-outlook-2026-recovery" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-green);"></span>Morgan Stanley — RE Outlook 2026
+      </a>
+      <a href="https://immersitech.com/blog/top-5-real-estate-investment-strategies-for-2026" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-green);"></span>Immersitech — Top 5 RE Strategies
+      </a>
+      <a href="https://www.schwab.com/learn/story/fixed-income-outlook" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-yellow);"></span>Charles Schwab — Fixed Income Outlook
+      </a>
+      <a href="https://www.fidelity.com/learning-center/trading-investing/fixed-income-outlook" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-yellow);"></span>Fidelity — Bonds Outlook 2026
+      </a>
+      <a href="https://www.pinebridge.com/en/insights/2026-fixed-income-outlook" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-yellow);"></span>PineBridge — Fixed Income 2026
+      </a>
+      <a href="https://coinledger.io/learn/best-long-term-crypto" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-purple);"></span>CoinLedger — Best Long-Term Crypto
+      </a>
+      <a href="https://www.fool.com/investing/2026/01/29/thinking-about-investing-in-crypto-in-2026-here-ar/" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-purple);"></span>Motley Fool — Crypto Picks 2026
+      </a>
+      <a href="https://www.jpmorgan.com/insights/global-research/commodities/gold-prices" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-orange);"></span>J.P. Morgan — Gold Price Predictions
+      </a>
+      <a href="https://www.canadianminingreport.com/blog/2026-strategic-metals-investing-guide-for-long-term-investors" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-orange);"></span>Strategic Metals Guide 2026
+      </a>
+      <a href="https://www.vaneck.com/us/en/blogs/gold-investing/gold-investing-outlook/" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-orange);"></span>VanEck — Gold Investing Outlook
+      </a>
+      <a href="https://www.morningstar.com/funds/6-etf-investing-predictions-2026" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-pink);"></span>Morningstar — 6 ETF Predictions 2026
+      </a>
+      <a href="https://www.bankrate.com/investing/best-etfs/" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-pink);"></span>Bankrate — Best ETFs 2026
+      </a>
+      <a href="https://www.invesco.com/us/en/insights/etf-ideas-key-2026-investment-themes.html" target="_blank" rel="noopener">
+        <span class="src-dot" style="background:var(--accent-pink);"></span>Invesco — ETF Ideas for 2026 Themes
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ════════════════════  FOOTER  ════════════════════ -->
+<footer>
+  <strong>Investment Strategies 2026</strong> — For informational purposes only. Not financial advice.
+  Always consult a qualified financial advisor before making investment decisions.
+</footer>
+
+</body>
+</html>
